@@ -20,23 +20,23 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam("num1") Integer numberFirst, @RequestParam("num2") Integer numberSecond) {
-        return calculatorService.plus(numberFirst, numberSecond);
+    public String plus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        return calculatorService.plus(num1, num2);
     }
 
     @GetMapping(path = "/minus")
-    public String minus(@RequestParam("num1") Integer numberFirst, @RequestParam("num2") Integer numberSecond) {
-        return calculatorService.minus(numberFirst, numberSecond);
+    public String minus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        return calculatorService.minus(num1, num2);
     }
 
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam("num1") Integer numberFirst, @RequestParam("num2") Integer numberSecond) {
+    public String multiply(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
 
-        return calculatorService.multiply(numberFirst, numberSecond);
+        return calculatorService.multiply(num1, num2);
     }
 
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam("num1") Integer numberFirst, @RequestParam("num2") Integer numberSecond) {
-        return calculatorService.divide(numberFirst, numberSecond);
+    public String divide(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
+        return calculatorService.divide(num1, num2);
     }
 }
