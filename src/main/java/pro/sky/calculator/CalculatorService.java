@@ -2,11 +2,11 @@ package pro.sky.calculator;
 public interface CalculatorService {
     public String helloCalculator();
 
-    public Integer plus(Integer numberFirst, Integer numberSecond);
+    public String plus(Integer numberFirst, Integer numberSecond);
 
-    public Integer minus(Integer numberFirst, Integer numberSecond);
+    public String  minus(Integer numberFirst, Integer numberSecond);
 
-    public Integer multiply(Integer numberFirst, Integer numberSecond);
+    public String multiply(Integer numberFirst, Integer numberSecond);
 
-    public Double divide(Integer numberFirst, Integer numberSecond);
+    public String divide(Integer numberFirst, Integer numberSecond);
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class CalculatorServiceImpl implements CalculatorService {
 
     private boolean isNuLLNumber(Integer number) {
-        return number == null;
+        return number == 0;
     }
 
     @Override
@@ -15,37 +15,37 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     @Override
-    public Integer plus(Integer numberFirst, Integer numberSecond) {
+    public String plus(Integer numberFirst, Integer numberSecond) {
         if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
-            throw new IllegalArgumentException("Значение не может быть пустым");
+            return "Значение не может быть пустым";
         }
-        return numberFirst + numberSecond;
+        return String.valueOf(numberFirst + numberSecond);
     }
 
     @Override
-    public Integer minus(Integer numberFirst, Integer numberSecond) {
+    public String minus(Integer numberFirst, Integer numberSecond) {
         if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
-            throw new IllegalArgumentException("Значение не может быть пустым");
+            return "Значение не может быть пустым";
         }
-        return numberFirst - numberSecond;
+        return String.valueOf(numberFirst - numberSecond);
     }
 
     @Override
-    public Integer multiply(Integer numberFirst, Integer numberSecond) {
+    public String multiply(Integer numberFirst, Integer numberSecond) {
         if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
-            throw new IllegalArgumentException("Значение не может быть пустым");
+            return "Значение не может быть пустым";
         }
-        return numberFirst * numberSecond;
+        return String.valueOf(numberFirst * numberSecond);
     }
 
     @Override
-    public Double divide(Integer numberFirst, Integer numberSecond) {
-        if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
-            throw new IllegalArgumentException("Значение не может быть пустым");
-        }
+    public String divide(Integer numberFirst, Integer numberSecond) {
         if (numberSecond == 0) {
-            throw new IllegalArgumentException("На 0 делить нельзя");
+            return "На 0 делить нельзя";
         }
-        return numberFirst/(double) numberSecond;
+        if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
+            return "Значение не может быть пустым";
+        }
+        return String.valueOf(numberFirst / (double) numberSecond);
     }
 }
