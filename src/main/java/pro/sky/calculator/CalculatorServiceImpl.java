@@ -1,10 +1,19 @@
 package pro.sky.calculator;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CalculatorServiceImpl implements CalculatorService {
 
     private boolean isNuLLNumber(Integer number) {
         return number == null;
     }
+
+    @Override
+    public String helloCalculator() {
+        return "Добро пожаловать в калькулятор";
+    }
+
     @Override
     public Integer plus(Integer numberFirst, Integer numberSecond) {
         if (isNuLLNumber(numberFirst) || isNuLLNumber(numberSecond)) {
@@ -37,6 +46,6 @@ public class CalculatorServiceImpl implements CalculatorService {
         if (numberSecond == 0) {
             throw new IllegalArgumentException("На 0 делить нельзя");
         }
-        return (double) (numberFirst/numberSecond);
+        return numberFirst/(double) numberSecond;
     }
 }
