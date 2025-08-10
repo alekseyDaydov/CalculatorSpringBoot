@@ -31,7 +31,6 @@ public class CalculatorController {
 
     @GetMapping(path = "/multiply")
     public String multiply(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
-
         return calculatorService.multiply(num1, num2);
     }
 
